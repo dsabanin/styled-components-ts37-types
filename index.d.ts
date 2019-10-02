@@ -94,9 +94,9 @@ export type Interpolation<P> =
     | InterpolationValue
     | FlattenInterpolation<P>
     | InterpolationFunction<P>;
-// must be an interface to be self-referential
-export interface FlattenInterpolation<P>
-    extends ReadonlyArray<Interpolation<P>> {}
+
+export  type FlattenInterpolation<P> = ReadonlyArray<Interpolation<P>>;
+
 export type InterpolationValue =
     | string
     | number
@@ -107,9 +107,7 @@ export type InterpolationValue =
 export type SimpleInterpolation =
     | InterpolationValue
     | FlattenSimpleInterpolation;
-// must be an interface to be self-referential
-export interface FlattenSimpleInterpolation
-    extends ReadonlyArray<SimpleInterpolation> {}
+export type FlattenSimpleInterpolation = ReadonlyArray<SimpleInterpolation>;
 
 export type InterpolationFunction<P> = (props: P) => Interpolation<P>;
 
